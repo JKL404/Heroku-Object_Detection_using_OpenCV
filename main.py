@@ -3,11 +3,6 @@ from app import app
 import urllib.request
 from werkzeug.utils import secure_filename
 from flask import Flask, flash, request, redirect, url_for, render_template
-# Code to run main scan file
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-import time
 
 
 @app.route('/')
@@ -22,7 +17,11 @@ def upload_form():
 
 @app.route('/textdetect/', methods=['POST'])
 def upload_image():
-
+    # Code to run main scan file
+    import cv2
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import time
     # Load webcam
     font = cv2.FONT_HERSHEY_SIMPLEX
     starting_time = time.time()
